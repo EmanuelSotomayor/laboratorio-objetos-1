@@ -4,16 +4,18 @@ import java.time.LocalDate;
 
 public class Jugador extends Persona{
 
+    private Integer id;
     private Float estatura;
     private Float peso;
     private String posicion;
     private Integer numero;
 
-    public Jugador(String nombre, String apellido,
+    public Jugador(Integer id, String nombre, String apellido,
                    LocalDate fechaNacimiento, String dni,
                    Float estatura, Float peso,
                    String posicion, Integer numero){
         super(nombre, apellido, fechaNacimiento, dni);
+        this.id = id;
         this.estatura = estatura;
         this.peso = peso;
         this.posicion = posicion;
@@ -54,10 +56,19 @@ public class Jugador extends Persona{
         this.numero = numero;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Jugador{" +
-                "estatura=" + estatura +
+                "id=" + id +
+                ", estatura=" + estatura +
                 ", peso=" + peso +
                 ", posicion='" + posicion + '\'' +
                 ", numero=" + numero +

@@ -2,6 +2,7 @@ package modelo;
 
 public class EstadisticaPartido {
 
+    private Integer id;
     private Jugador jugador;
     private Partido partido;
     private Integer cantidadGoles;
@@ -10,9 +11,10 @@ public class EstadisticaPartido {
 
     public EstadisticaPartido() {}
 
-    public EstadisticaPartido(Jugador jugador, Partido partido,
+    public EstadisticaPartido(Integer id, Jugador jugador, Partido partido,
                               Integer cantidadGoles, Integer cantidadAsistencias,
                               Integer cantidadMinutosJugados) {
+        this.id = id;
         this.jugador = jugador;
         this.partido = partido;
         this.cantidadGoles = cantidadGoles;
@@ -60,10 +62,19 @@ public class EstadisticaPartido {
         this.cantidadMinutosJugados = cantidadMinutosJugados;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "EstadisticaPartido{" +
-                "jugador=" + jugador +
+                "id=" + id +
+                ", jugador=" + jugador +
                 ", partido=" + partido +
                 ", cantidadGoles=" + cantidadGoles +
                 ", cantidadAsistencias=" + cantidadAsistencias +
